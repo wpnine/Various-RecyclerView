@@ -60,7 +60,7 @@ public class ExpandLabelItem extends RecyclerItem<ExpandLabelItem.Config,Recycle
         switch (viewType){
             case TYPE_EXPAND:
                 ExpandableViewHolder  expandableViewHolder = (ExpandableViewHolder)viewHolder;
-                expandableViewHolder.textView.setText(config.itemName + ">>>>>"  + (config.isExpand ? "Close" : "Open" ));
+                expandableViewHolder.textView.setText(config.itemName + ">>>>>"  + (config.isExpand ? "Close" : "Open" ) + "(Click This)");
                 expandableViewHolder.textView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -120,6 +120,7 @@ public class ExpandLabelItem extends RecyclerItem<ExpandLabelItem.Config,Recycle
         private List<String> showList = new ArrayList<>();
 
         public Config(String itemName,boolean isExpand, List<String> showList) {
+            this.itemName = itemName;
             this.isExpand = isExpand;
             this.showList = showList;
         }
