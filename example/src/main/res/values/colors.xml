@@ -3,4 +3,19 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
+    <color name="background_default">#f5f6f8</color>
+    <color name="background_primary">#ffffffff</color>
+    <color name="background_white">#ffffff</color>
+    <color name="background_discount_flag">#ff7339</color>
+
+    <color name="font_primary">#333333</color>
+    <color name="font_secondary">#666666</color>
+    <color name="font_negative">#999999</color>
+    <color name="font_hint">#99ffffff</color>
+    <color name="font_special">#20bf7a</color><!--价格文字与重要数字跟标签文字的用色-->
+    <dimen name="font_normal">16sp</dimen>
+    <color name="font_midle_yellow">#ff7339</color>
+
+    <color name="divider_gray_dark">#e6e6e6</color>
 </resources>

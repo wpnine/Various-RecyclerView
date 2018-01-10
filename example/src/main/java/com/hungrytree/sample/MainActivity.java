@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
+import com.hungrytree.sample.activities.ShopDetailActivity;
 import com.hungrytree.sample.activities.InternalControlActivity;
 import com.hungrytree.sample.activities.BasicExampleActivity;
 import com.hungrytree.sample.activities.SpecificChangeActivity;
@@ -23,6 +24,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.btnChange).setOnClickListener(this);
         findViewById(R.id.btnBasic).setOnClickListener(this);
         findViewById(R.id.btnAttatch).setOnClickListener(this);
+        findViewById(R.id.btnShopDetail).setOnClickListener(this);
     }
 
 
@@ -38,6 +40,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btnAttatch:
                 intent = new Intent(this, InternalControlActivity.class);
+                break;
+            case R.id.btnShopDetail:
+                intent = new Intent(this, ShopDetailActivity.class);
                 break;
         }
         startActivity(intent);

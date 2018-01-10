@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">vradapter</string>
+    <string name="shop_coupon_discount_hint">买%1$s减%2$s</string>
+
+    <string name="shop_btn_call_phone">商家电话</string>
+    <string name="shop_btn_call_servicer">联系客服</string>
+    <string name="shop_name_collect">收藏</string>
+    <string name="shop_name_care">关注</string>
+
+
+    <string name="shop_btn_scrop_desc">简介</string>
+    <string name="shop_btn_scrop_product">商品</string>
+    <string name="shop_btn_scrop_service">服务</string>
+    <string name="shop_btn_look_more">查看全部</string>
+
+    <string name="shop_label_open_time">营业时间</string>
 </resources>

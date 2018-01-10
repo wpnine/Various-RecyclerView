@@ -41,6 +41,11 @@ public class ItemManager implements IRecyclerSupport{
     }
 
 
+    public int getItemCount(RecyclerItem item){
+        return item.getItemCount(item.getData());
+    }
+
+
     public HashMap<RecyclerItem,Integer> getItemCountRecord(){
         return mItemCountRecord;
     }

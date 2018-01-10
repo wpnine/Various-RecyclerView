@@ -12,6 +12,9 @@
         <activity android:name="com.hungrytree.sample.activities.SpecificChangeActivity"></activity>
         <activity android:name="com.hungrytree.sample.activities.BasicExampleActivity"></activity>
         <activity android:name="com.hungrytree.sample.activities.InternalControlActivity"></activity>
+        <activity android:name="com.hungrytree.sample.activities.ShopDetailActivity"></activity>
+
+
         <activity android:name="com.hungrytree.sample.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

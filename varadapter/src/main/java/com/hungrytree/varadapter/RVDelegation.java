@@ -16,7 +16,7 @@ import java.util.*;
  * 
  */
 public class RVDelegation implements IDelegation {
-    private IRecyclerSupport mRecyclerSupport;
+    private ItemManager mRecyclerSupport;
     private IRefreshHandler mRefreshHandler;
     private RecyclerView.Adapter mRecyclerAdapter;
 
@@ -112,6 +112,6 @@ public class RVDelegation implements IDelegation {
     }
 
     public ItemManager getItemManager(){
-        return (ItemManager) mRecyclerSupport;
+        return mRecyclerSupport;
     }
 }

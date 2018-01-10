@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -23,7 +24,7 @@ import java.util.Random;
  * 指定特定的item去改变数据
  */
 
-public class SpecificChangeActivity extends Activity implements View.OnClickListener {
+public class SpecificChangeActivity extends AppCompatActivity implements View.OnClickListener {
     private RecyclerView mRecyclerView = null;
     private RVDelegation mRVDelegation = new RVDelegation();
     static final int ITEM_COUNT = 5;

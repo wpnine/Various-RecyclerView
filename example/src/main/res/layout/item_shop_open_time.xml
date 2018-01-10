@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingLeft="15dp"
+    android:paddingBottom="6dp"
+    android:orientation="horizontal"
+    android:background="@color/background_white"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:padding="15dp"
+    >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/font_normal"
+        android:textColor="@color/font_primary"
+        android:text="@string/shop_label_open_time"
+        android:drawablePadding="5dp"
+        android:gravity="center_vertical"
+        android:drawableLeft="@mipmap/ic_shop_start_open"
+        />
+
+    <TextView
+        android:id="@+id/tv_open_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/font_normal"
+        android:textColor="@color/font_primary"
+        tools:text="ABCDEFG"
+        android:layout_marginLeft="20dp"
+        />
+</LinearLayout>

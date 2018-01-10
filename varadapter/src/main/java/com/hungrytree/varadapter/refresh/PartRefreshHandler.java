@@ -57,7 +57,12 @@ public class PartRefreshHandler implements IRefreshHandler {
         int startPosition = 0;
         for (RecyclerItem item : itemList) {
             ItemCloneInfo itemCloneInfo = new ItemCloneInfo();
-            itemCloneInfo.count = mItemManager.getItemCountRecord().get(item);  //拿取旧的缓存记录
+            Integer itemCount = mItemManager.getItemCountRecord().get(item);  //拿取旧的缓存记录
+            if(itemCount == null){
+                itemCloneInfo.count = 0;
+            }else{
+                itemCloneInfo.count = itemCount;
+            }
             itemCloneInfo.startPosition = startPosition;
             startPosition += itemCloneInfo.count;
             cloneItemList.add(itemCloneInfo);

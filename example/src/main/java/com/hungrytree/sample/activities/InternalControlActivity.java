@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.os.Message;
 import android.support.annotation.Nullable;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -21,7 +22,7 @@ import java.util.Arrays;
  * 实现上下拉功能
  */
 
-public class InternalControlActivity extends Activity{
+public class InternalControlActivity extends AppCompatActivity {
     private RecyclerView mRecyclerView = null;
     private RVDelegation mRVDelegation = new RVDelegation();
 

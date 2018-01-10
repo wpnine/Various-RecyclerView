@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_default"
+    >
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_detail"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+         />
+
+
+
+    <android.support.design.widget.TabLayout
+        style="@style/DefaultShopTabLayoutStyle"
+        android:id="@+id/tl_quick_leader"
+        android:layout_width="match_parent"
+        android:layout_height="43dp"
+        app:tabIndicatorHeight="2dp"
+        app:tabGravity="fill"
+        app:tabMode="fixed"
+        app:tabMinWidth="10dp"
+        android:foregroundGravity="center"
+        app:tabPadding="7dp"
+        android:orientation="vertical"
+        android:layout_centerHorizontal="true"
+        android:visibility="gone"
+        />
+
+
+</FrameLayout>
+
+
+

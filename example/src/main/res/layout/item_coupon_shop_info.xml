@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingBottom="12dp"
+    android:paddingLeft="15dp"
+    android:paddingRight="15dp"
+    android:background="@color/background_white"
+    android:paddingTop="10dp">
+
+    <TextView
+        android:id="@+id/tv_shop_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="鮨一日本料理鮨一日本料理(福田店)"
+        android:textColor="@color/font_primary"
+        android:textSize="@dimen/font_normal"
+        />
+
+    <TextView
+        android:id="@+id/tv_discount_flag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/background_discount_flag"
+        android:background="@drawable/shape_discount_flag"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:paddingTop="1dp"
+        android:paddingBottom="1dp"
+        android:layout_marginTop="5dp"
+        tools:text="满1000000减1"
+        />
+</LinearLayout>

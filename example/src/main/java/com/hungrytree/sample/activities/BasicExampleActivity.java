@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
@@ -19,7 +20,7 @@ import java.util.Arrays;
  * Created by wp.nine on 2018/1/7.
  */
 
-public class BasicExampleActivity extends Activity{
+public class BasicExampleActivity extends AppCompatActivity {
     private RecyclerView mRecyclerView = null;
     private RVDelegation mRVDelegation = new RVDelegation();
 

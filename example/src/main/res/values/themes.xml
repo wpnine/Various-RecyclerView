@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="DefaultShopTabLayoutStyle">
+        <item name="tabTextColor">@color/font_primary</item>
+        <item name="tabSelectedTextColor">@color/font_special</item>
+        <item name="tabTextAppearance">@style/DefaultShopTabLayoutTextAppearanceStyle</item>
+        <item name="android:background">@color/background_primary</item>
+        <item name="tabIndicatorColor">@color/font_special</item>
+        <item name="tabMode">scrollable</item>
+    </style>
+
+    <style name="DefaultShopTabLayoutTextAppearanceStyle" parent="TextAppearance.AppCompat.Widget.ActionBar.Title">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+</resources>
