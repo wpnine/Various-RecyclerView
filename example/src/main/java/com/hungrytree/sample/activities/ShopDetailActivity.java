@@ -297,6 +297,7 @@ public class ShopDetailActivity extends AppCompatActivity {
                     .changeData(shopBannerItem, shopModel.getShopPic())
                     .changeData(shopInfoItem, shopModel)
                     .changeData(shopConsolItem, shopModel)
+                    .changeData(shopCouponEnter,shopModel)
                     .changeData(shopLocationItem, new TitleModel(shopModel.getAddr(), shopModel.getShopRange() + "m", new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
