@@ -52,7 +52,7 @@
     recyclerView.setAdapter(new SimpleAdapter(mRVDelegation));
     delegation.initView(mRecyclerView);
     
-列表数据更新
+初始化列表items
 
     delegation.createTask()
               .attatchItem(new LabelItem(Color.WHITE), Arrays.asList("item 1>>1","item 1>>2"))
@@ -60,4 +60,12 @@
               .attatchItem(new LabelItem(Color.RED), Arrays.asList("item 3>>1"))
               .attatchItem(new ImageItem(),new int[]{R.mipmap.ic_launcher_round})
               .commit();
-    
+    
+更新列表
+
+    mRVDelegation.createTask()
+                .changeData(
+                  labelItem,
+                  Arrays.asList("item 1>>1","item 1>>2","item 1>>3"), 
+                  RefreshTask.RULE_ADJUST_BOTTOM)
+                .commit();
