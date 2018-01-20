@@ -43,4 +43,21 @@
                   ......
           }
     }
-        
+    
+初始化
+
+    RVDelegation delegation = new RVDelegation();
+    RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
+    recyclerView.setLayoutManager(new LinearLayoutManager(this));
+    recyclerView.setAdapter(new SimpleAdapter(mRVDelegation));
+    delegation.initView(mRecyclerView);
+    
+列表数据更新
+
+    delegation.createTask()
+              .attatchItem(new LabelItem(Color.WHITE), Arrays.asList("item 1>>1","item 1>>2"))
+              .attatchItem(new LabelItem(Color.YELLOW), Arrays.asList("item 2>>1"))
+              .attatchItem(new LabelItem(Color.RED), Arrays.asList("item 3>>1"))
+              .attatchItem(new ImageItem(),new int[]{R.mipmap.ic_launcher_round})
+              .commit();
+    
