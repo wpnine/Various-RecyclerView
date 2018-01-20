@@ -15,4 +15,32 @@
 
 
 
-而Various-RecyclerView 正是为处理复杂的列表界面而设计的。
+而Various-RecyclerView 是针对列表似的复杂界面而实现的，使不同的item种类进行独立处理，解决整个页面代码臃肿的问题。
+
+
+# Usage
+
+实现item
+
+    public class LabelItem extends RecyclerItem<List<String>,LabelItem.ViewHolder> {
+
+          @Override
+          public LabelItem.LabelViewHolder createChildViewHolder(ViewGroup parent, int viewType) {
+              //create viewHolder
+              return viewHolder
+          }
+          
+          @Override
+          public void onBindViewHolder(LabelItem.LabelViewHolder viewHolder, int position, int viewType) {
+          }
+          
+          @Override
+          public int getItemCount(List<String> data) {
+                return data.size();
+          }
+
+          public static class LabelViewHolder extends RecyclerView.ViewHolder{
+                  ......
+          }
+    }
+        
