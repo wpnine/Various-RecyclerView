@@ -15,7 +15,7 @@
 
 
 
-而Various-RecyclerView 是针对列表似的复杂界面而实现的，使不同的item种类进行独立处理，解决整个页面代码臃肿的问题。
+而Various-RecyclerView 是针对列表似的复杂界面而实现的，使不同的item种类进行独立处理，同一样式的item在不同页面中可以复用，同时使页面代码易于后期维护。
 
 
 # Usage
