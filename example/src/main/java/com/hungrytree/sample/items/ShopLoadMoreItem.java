@@ -1,6 +1,7 @@
 package com.hungrytree.sample.items;
 
 import android.app.Activity;
+import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -10,6 +11,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.hungrytree.sample.R;
+import com.hungrytree.varadapter.decoration.ItemDecorator;
 import com.hungrytree.varadapter.item.RecyclerItem;
 
 
@@ -72,6 +74,11 @@ public class ShopLoadMoreItem extends RecyclerItem<ShopLoadMoreItem.LoadMoreStat
         }
     }
 
+    @Override
+    public ItemDecorator getDecorator(int position) {
+        return new ItemDecorator()
+                .setBackgroundColor(Color.WHITE);
+    }
 
     public static class LoadMoreHolder extends RecyclerView.ViewHolder {
         ProgressBar mPbLoading;

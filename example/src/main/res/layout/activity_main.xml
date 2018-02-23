@@ -28,10 +28,25 @@
         android:text="Internal Control"/>
 
     <Button
+        android:id="@+id/btnBorderExample"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Border Example"/>
+
+    <Button
+        android:id="@+id/btnBorderComplex"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Border Complex Example"/>
+
+    <Button
         android:id="@+id/btnShopDetail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Shop Detiail"/>
+
+
+
 
 
 </LinearLayout>

@@ -3,6 +3,7 @@ package com.hungrytree.varadapter.item;
 import android.support.v7.widget.RecyclerView;
 import android.view.ViewGroup;
 
+import com.hungrytree.varadapter.decoration.ItemDecorator;
 import com.hungrytree.varadapter.refresh.IRefreshHandler;
 
 
@@ -32,6 +33,14 @@ public abstract class RecyclerItem<T,K extends RecyclerView.ViewHolder> {
      */
     public abstract void onBindViewHolder(K viewHolder, int position, int viewType);
 
+
+    /**
+     * 获取item的修饰，用于设置背景或分隔线等
+     * @return 为空则说明不需要
+     */
+    public ItemDecorator getDecorator(int position){
+        return null;
+    }
 
     /**
      * 根据数据获得item的数量

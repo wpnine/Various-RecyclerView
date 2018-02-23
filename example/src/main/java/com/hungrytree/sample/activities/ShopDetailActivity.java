@@ -31,7 +31,6 @@ import com.hungrytree.sample.model.TitleModel;
 import com.hungrytree.sample.TestDataProvider;
 import com.hungrytree.sample.other.QuickLeadBarHelper;
 import com.hungrytree.sample.other.SafeHandler;
-import com.hungrytree.sample.other.ShopItemDecoration;
 import com.hungrytree.varadapter.RVDelegation;
 import com.hungrytree.varadapter.item.ItemManager;
 import com.hungrytree.varadapter.refresh.RefreshTask;
@@ -108,12 +107,11 @@ public class ShopDetailActivity extends AppCompatActivity {
             }
         });
         mRvDetail.setLayoutManager(gridLayoutManager);
-        mRvDetail.addItemDecoration(new ShopItemDecoration(mItemProvider));
 
         mAdapter = new SimpleAdapter(mDelegate);
         mRvDetail.setAdapter(mAdapter);
         mDelegate.initView(mRvDetail);
-
+        mDelegate.enableDelegation(true);
         mItemProvider.init();
     }
 

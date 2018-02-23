@@ -1,5 +1,6 @@
 package com.hungrytree.sample.items;
 
+import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +11,8 @@ import android.widget.TextView;
 
 import com.hungrytree.sample.R;
 import com.hungrytree.sample.model.ShopModel;
+import com.hungrytree.varadapter.decoration.ILine;
+import com.hungrytree.varadapter.decoration.ItemDecorator;
 import com.hungrytree.varadapter.item.RecyclerItem;
 
 import java.util.List;
@@ -35,9 +38,15 @@ public class ShopServiceItem extends RecyclerItem<List<ShopModel.ShopService>, S
 
     @Override
     public void onBindViewHolder(ServiceViewHolder holder, int position, int viewType) {
-        ShopModel.ShopService shopService = getData().get(position);
-        holder.mIvIcon.setImageResource(shopService.getLogoPic());
-        holder.mTvLabel.setText(shopService.getServiceName());
+        if(position < getData().size()){
+            ShopModel.ShopService shopService = getData().get(position);
+            holder.mIvIcon.setImageResource(shopService.getLogoPic());
+            holder.mTvLabel.setText(shopService.getServiceName());
+        }else{
+            holder.mIvIcon.setImageDrawable(null);
+            holder.mTvLabel.setText("");
+        }
+
     }
 
     @Override
@@ -45,9 +54,21 @@ public class ShopServiceItem extends RecyclerItem<List<ShopModel.ShopService>, S
         if (data == null || data.size() == 0) {
             return 0;
         }
-        return data.size();
+        int count = data.size();
+
+        if(count % 3 != 0){
+            return count + (3 - (count % 3));
+        }else{
+            return count;
+        }
+
     }
 
+    @Override
+    public ItemDecorator getDecorator(int position) {
+        return new ItemDecorator()
+                .setBackgroundColor(Color.WHITE);
+    }
 
     public static class ServiceViewHolder extends RecyclerView.ViewHolder {
         ImageView mIvIcon;

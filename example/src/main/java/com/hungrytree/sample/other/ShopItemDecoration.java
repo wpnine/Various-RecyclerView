@@ -17,8 +17,9 @@ import com.hungrytree.varadapter.item.ItemManager;
 
 /**
  * Created by wp.nine on 2018/1/10.
+ * 用于商品列表的分隔线绘画，现由RVDelegation.enableDelegation 来实现
  */
-
+@Deprecated
 public class ShopItemDecoration extends RecyclerView.ItemDecoration {
     private ShopDetailActivity.ItemProvider mItemProvider;
     private Paint mBackgroundPaint = null;
@@ -62,6 +63,9 @@ public class ShopItemDecoration extends RecyclerView.ItemDecoration {
         drawServiceBackground(c, parent, state);
 
     }
+
+
+
 
     private void drawServiceBackground(Canvas c, RecyclerView parent, RecyclerView.State state) {
         ItemManager itemManager = getItemManager();

@@ -163,7 +163,7 @@ public class QuickLeadBarHelper {
     public interface OnPositionProvider{
         /**
          * @param tabIndex 指定tab的下标
-         * @return 获取tab所管的范围
+         * @return 获取tab所管的范围，例：返回[1,5]意思从第二个item到第5个item的范围
          */
         int[] getTabManagerScrop(int tabIndex);
 

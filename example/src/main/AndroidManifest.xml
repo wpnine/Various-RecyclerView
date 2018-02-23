@@ -13,6 +13,8 @@
         <activity android:name="com.hungrytree.sample.activities.BasicExampleActivity"></activity>
         <activity android:name="com.hungrytree.sample.activities.InternalControlActivity"></activity>
         <activity android:name="com.hungrytree.sample.activities.ShopDetailActivity"></activity>
+        <activity android:name="com.hungrytree.sample.activities.BorderExampleActivity"></activity>
+        <activity android:name="com.hungrytree.sample.activities.DecoratorExampleActivity"></activity>
 
 
         <activity android:name="com.hungrytree.sample.MainActivity">

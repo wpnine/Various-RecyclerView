@@ -5,6 +5,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
+import com.hungrytree.sample.activities.BorderExampleActivity;
+import com.hungrytree.sample.activities.DecoratorExampleActivity;
 import com.hungrytree.sample.activities.ShopDetailActivity;
 import com.hungrytree.sample.activities.InternalControlActivity;
 import com.hungrytree.sample.activities.BasicExampleActivity;
@@ -25,6 +27,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.btnBasic).setOnClickListener(this);
         findViewById(R.id.btnAttatch).setOnClickListener(this);
         findViewById(R.id.btnShopDetail).setOnClickListener(this);
+        findViewById(R.id.btnBorderComplex).setOnClickListener(this);
+        findViewById(R.id.btnBorderExample).setOnClickListener(this);
     }
 
 
@@ -43,6 +47,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btnShopDetail:
                 intent = new Intent(this, ShopDetailActivity.class);
+                break;
+            case R.id.btnBorderExample:
+                intent = new Intent(this, BorderExampleActivity.class);
+                break;
+            case R.id.btnBorderComplex:
+                intent = new Intent(this, DecoratorExampleActivity.class);
                 break;
         }
         startActivity(intent);

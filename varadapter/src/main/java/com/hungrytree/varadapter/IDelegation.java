@@ -29,4 +29,11 @@ public interface IDelegation extends IRecyclerSupport,IRefreshHandler{
      */
     RefreshTask createTask();
 
+
+    /**
+     * 设置delegation 支持item绘制分隔线，如果RecyclerItem.getDelegation 实现了该方法，则会绘制该item的分隔线
+     * @param  isEnable 若为true,则启动。
+     */
+    void enableDelegation(boolean isEnable);
+
 }

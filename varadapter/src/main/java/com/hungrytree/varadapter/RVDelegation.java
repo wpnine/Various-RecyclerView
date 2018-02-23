@@ -4,12 +4,13 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.ViewGroup;
 
-import com.hungrytree.varadapter.item.IRecyclerSupport;
+import com.hungrytree.varadapter.decoration.VarDecoration;
 import com.hungrytree.varadapter.item.ItemManager;
 import com.hungrytree.varadapter.refresh.IRefreshHandler;
 import com.hungrytree.varadapter.refresh.PartRefreshHandler;
 import com.hungrytree.varadapter.refresh.RefreshTask;
 
+import java.lang.ref.WeakReference;
 import java.util.*;
 
 /**
@@ -19,6 +20,8 @@ public class RVDelegation implements IDelegation {
     private ItemManager mRecyclerSupport;
     private IRefreshHandler mRefreshHandler;
     private RecyclerView.Adapter mRecyclerAdapter;
+    private WeakReference<RecyclerView> mRecyclerView;
+    private RecyclerView.ItemDecoration mItemDecoration;
 
     /**
      * Default constructor
@@ -31,6 +34,11 @@ public class RVDelegation implements IDelegation {
      * @return
      */
     public void initView(RecyclerView view){
+        if(mRecyclerView != null && mRecyclerView.get() == view){
+            return;
+        }
+
+        mRecyclerView = new WeakReference<RecyclerView>(view);
         mRecyclerAdapter = view.getAdapter();
         if(mRecyclerAdapter == null){
             throw new IllegalFormatFlagsException("no found adapter");
@@ -42,11 +50,11 @@ public class RVDelegation implements IDelegation {
             mRecyclerSupport = itemManager;
         }
         mRefreshHandler.setAdapter(mRecyclerAdapter);
+        mItemDecoration = null;
     }
 
     public int getItemCount() {
         assertInitRecyclerView();
-        Log.i("haha","getItemCount");
         return mRecyclerSupport.getItemCount();
     }
 
@@ -54,6 +62,18 @@ public class RVDelegation implements IDelegation {
     public void putTask(RefreshTask task) {
         mRefreshHandler.putTask(task);
     }
+
+    @Override
+    public void enableDelegation(boolean isEnable) {
+        assertInitRecyclerView();
+        if(isEnable && mItemDecoration == null){
+            mItemDecoration = new VarDecoration(mRecyclerSupport);
+            mRecyclerView.get().addItemDecoration(mItemDecoration);
+        }else if(!isEnable && mItemDecoration != null){
+            mRecyclerView.get().removeItemDecoration(mItemDecoration);
+        }
+    }
+
 
     /**
      * @param parent 
@@ -106,7 +126,7 @@ public class RVDelegation implements IDelegation {
 
 
     private void assertInitRecyclerView(){
-        if(mRefreshHandler == null){
+        if(mRecyclerView == null || mRecyclerView.get() == null){
             throw new RuntimeException("must invoke initView() method");
         }
     }

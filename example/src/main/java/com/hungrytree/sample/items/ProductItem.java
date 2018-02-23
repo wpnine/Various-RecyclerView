@@ -1,9 +1,11 @@
 package com.hungrytree.sample.items;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.graphics.Paint;
 import android.support.v7.widget.RecyclerView;
 import android.util.DisplayMetrics;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +17,8 @@ import android.widget.TextView;
 import com.hungrytree.sample.R;
 import com.hungrytree.sample.model.ProductDetail;
 import com.hungrytree.sample.other.FormatUtil;
+import com.hungrytree.varadapter.decoration.BorderLine;
+import com.hungrytree.varadapter.decoration.ItemDecorator;
 import com.hungrytree.varadapter.item.RecyclerItem;
 
 import java.util.List;
@@ -24,8 +28,36 @@ import java.util.List;
  * Created by wp.nine on 2016/9/14.
  */
 public class ProductItem extends RecyclerItem<List<ProductDetail>, ProductItem.GoodsViewHolder> {
+    private ItemDecorator LEFT_DECORATOR = new ItemDecorator()
+            .setBackgroundColor(Color.WHITE)
+            .addLine(new BorderLine()
+                    .setLinePosition(BorderLine.POSITION_BOTTOM)
+                    .setColor(0xffe6e6e6)
+                    .setLineLength(BorderLine.LENGTH_MATCH_ITEM)
+                    .setLineWidth(1)
+                    .setGravity(Gravity.CENTER)
+            )
+            .addLine(new BorderLine()
+                    .setLinePosition(BorderLine.POSITION_RIGHT)
+                    .setColor(0xffe6e6e6)
+                    .setLineLength(BorderLine.LENGTH_MATCH_ITEM)
+                    .setLineWidth(1)
+                    .setGravity(Gravity.CENTER)
+            );
+
+    private ItemDecorator RIGHT_DECORATOR = new ItemDecorator()
+            .setBackgroundColor(Color.WHITE)
+            .addLine(new BorderLine()
+                    .setLinePosition(BorderLine.POSITION_BOTTOM)
+                    .setColor(0xffe6e6e6)
+                    .setLineLength(BorderLine.LENGTH_MATCH_ITEM)
+                    .setLineWidth(1)
+                    .setGravity(Gravity.CENTER)
+            );
+
 
     private int mWinWidth = 0;
+    private int mCurCount = 0;
     public ProductItem() {
     }
 
@@ -67,14 +99,22 @@ public class ProductItem extends RecyclerItem<List<ProductDetail>, ProductItem.G
     @Override
     public int getItemCount(List<ProductDetail> data) {
         if (data == null) {
-            return 0;
+            mCurCount = 0;
+        }else{
+            mCurCount = data.size();
         }
-        return data.size();
+        return mCurCount;
 
     }
 
-
-
+    @Override
+    public ItemDecorator getDecorator(int position) {
+        if(position % 2 == 0){
+            return LEFT_DECORATOR;
+        }else{
+            return RIGHT_DECORATOR;
+        }
+    }
 
     static class GoodsViewHolder extends RecyclerView.ViewHolder {
         ImageView mIvGoodsPic;
