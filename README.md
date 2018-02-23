@@ -15,4 +15,57 @@
 
 
 
-而Various-RecyclerView 正是为处理复杂的列表界面而设计的。
+而Various-RecyclerView 是针对列表似的复杂界面而实现的，使不同的item种类进行独立处理，同一样式的item在不同页面中可以复用，同时使页面代码易于后期维护。
+
+
+# Usage
+
+实现item
+
+    public class LabelItem extends RecyclerItem<List<String>,LabelItem.ViewHolder> {
+
+          @Override
+          public LabelItem.LabelViewHolder createChildViewHolder(ViewGroup parent, int viewType) {
+              //create viewHolder
+              return viewHolder
+          }
+          
+          @Override
+          public void onBindViewHolder(LabelItem.LabelViewHolder viewHolder, int position, int viewType) {
+          }
+          
+          @Override
+          public int getItemCount(List<String> data) {
+                return data.size();
+          }
+
+          public static class LabelViewHolder extends RecyclerView.ViewHolder{
+                  ......
+          }
+    }
+    
+初始化
+
+    RVDelegation delegation = new RVDelegation();
+    RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
+    recyclerView.setLayoutManager(new LinearLayoutManager(this));
+    recyclerView.setAdapter(new SimpleAdapter(mRVDelegation));
+    delegation.initView(mRecyclerView);
+    
+初始化列表items
+
+    delegation.createTask()
+              .attatchItem(new LabelItem(Color.WHITE), Arrays.asList("item 1>>1","item 1>>2"))
+              .attatchItem(new LabelItem(Color.YELLOW), Arrays.asList("item 2>>1"))
+              .attatchItem(new LabelItem(Color.RED), Arrays.asList("item 3>>1"))
+              .attatchItem(new ImageItem(),new int[]{R.mipmap.ic_launcher_round})
+              .commit();
+    
+更新列表
+
+    mRVDelegation.createTask()
+                .changeData(
+                  labelItem,
+                  Arrays.asList("item 1>>1","item 1>>2","item 1>>3"), 
+                  RefreshTask.RULE_ADJUST_BOTTOM)
+                .commit();
